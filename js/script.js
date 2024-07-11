@@ -24,5 +24,22 @@ const images = [
 
 const image = document.querySelector('.images')
 
-let show_img = '';
+let main_container = document.getElementById('container');
 
+
+images.forEach((elem, index) => {
+    main_container.innerHTML += `
+    <div class="container" id="container">
+    <div class="images">
+    <div class="image d-none">
+    <img src="${elem.image}" alt="${elem.title}">
+    </div>
+    </div>
+    </div>`    
+})
+
+let active = 0
+
+const img = document.querySelectorAll('.image')
+
+img[active].classList.remove('d-none')
