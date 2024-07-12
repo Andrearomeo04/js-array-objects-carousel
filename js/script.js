@@ -47,14 +47,24 @@ const prev_btn = document.querySelector('.prev')
 const next_btn = document.querySelector('.next')
 
 prev_btn.addEventListener('click', function () {
-    active_element--
+    if (active_element === 0) {
+        active_element = images.length - 1
+
+    } else {
+        active_element--
+    }
 
     document.querySelector('.image.active').classList.remove('active')
     document.querySelectorAll('.image')[active_element].classList.add('active')
 })
 
 next_btn.addEventListener('click', function () {
-    active_element++
+    if (active_element === images.length - 1) {
+        active_element = 0
+
+    } else {
+        active_element++
+    }
 
     document.querySelector('.image.active').classList.remove('active')
     document.querySelectorAll('.image')[active_element].classList.add('active')
