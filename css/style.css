@@ -26,8 +26,12 @@
     
 }
 
-.d-none {
-    display: none;
+.image {
+    display:none
+}
+
+.image.active {
+    display: block;
 }
 
 .prev,
