@@ -24,18 +24,14 @@ const images = [
 
 const image = document.querySelector('.images')
 
-let main_container = document.getElementById('container');
+let main_container = document.getElementById('image-container');
 
 
 images.forEach((elem, index) => {
     main_container.innerHTML += `
-    <div class="container" id="container">
-    <div class="images">
-    <div class="image d-none">
-    <img src="${elem.image}" alt="${elem.title}">
-    </div>
-    </div>
-    </div>`    
+        <div class="image d-none">
+            <img src="${elem.image}" alt="${elem.title}">
+        </div>`    
 })
 
 let active = 0
@@ -43,3 +39,10 @@ let active = 0
 const img = document.querySelectorAll('.image')
 
 img[active].classList.remove('d-none')
+
+const prev_btn = document.querySelector('.prev')
+const next_btn = document.querySelector('.next')
+
+prev_btn.addEventListener('click', function () {
+    active--
+})
