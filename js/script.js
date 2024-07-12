@@ -27,24 +27,36 @@ const image = document.querySelector('.images')
 let main_container = document.getElementById('image-container');
 
 
-images.forEach((elem, index) => {
+images.forEach((elem) => {
     main_container.innerHTML += `
         <div class="image">
             <img src="${elem.image}" alt="${elem.title}">
+            <div class="text">
+                <h2>${elem.title}</h2>
+                <p>${elem.text}</p>
+            </div>
         </div>`    
 })
 
-let active = 0
+let active_element = 0
 
-document.querySelectorAll('.image')[active].classList.add('active')
+document.querySelectorAll('.image')[active_element].classList.add('active')
 
 
 const prev_btn = document.querySelector('.prev')
 const next_btn = document.querySelector('.next')
 
 prev_btn.addEventListener('click', function () {
-    active--
+    active_element--
 
-    document.querySelector('.image.active')[active].remove('active')
-    document.querySelectorAll('image')[active].classList.add('active')
+    document.querySelector('.image.active').classList.remove('active')
+    document.querySelectorAll('.image')[active_element].classList.add('active')
 })
+
+next_btn.addEventListener('click', function () {
+    active_element++
+
+    document.querySelector('.image.active').classList.remove('active')
+    document.querySelectorAll('.image')[active_element].classList.add('active')
+})
+

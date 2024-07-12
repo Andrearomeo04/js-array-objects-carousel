@@ -27,7 +27,8 @@
 }
 
 .image {
-    display:none
+    display:none;
+    position: relative;
 }
 
 .image.active {
@@ -62,3 +63,24 @@
 .next:hover {
     background-color: rgba(46, 46, 46, 0.555);
 }
+
+.text {
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+    width: 75%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+}
+
